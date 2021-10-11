@@ -1,4 +1,4 @@
-# Tension Pool
+# Tension Pool [Forked]
 
 [![GitHub release](https://img.shields.io/github/release/sdoehren/tension-pool.svg)](https://GitHub.com/sdoehren/tension-pool/releases/)
 [![GitHub issues](https://img.shields.io/github/issues/SDoehren/tension-pool/bug)](https://GitHub.com/sdoehren/tension-pool/issues/)
@@ -94,19 +94,24 @@ Hook Calls and API are available [here](api.md)
 ## Change log
 
 [Change log](Changelog.md)
+#### 0.5.3
+
+- Forked by Thalissa
+- This is a [personal fork](https://github.com/thalissa/tension-pool) so that I can modify Tension Pool as I like without interfering with the main branch; if the developer wants to pull anything from my fork into the main branch, I don't mind
+- Original repository is located [here](https://github.com/SDoehren/tension-pool)
+- Update to use semantic versioning
+
+#### 0053
+
+- Scene Control Buttons individually removable
+- Add die and roll pool button added
+- Option to Whisper result to DM added
 
 #### 0052 - Tension Timer
 
 - Tension Timer added (requires [Simple Calendar by vigoren](https://github.com/vigoren/foundryvtt-simple-calendar#installing-the-module))
-- Option to pause the game while the pool is being rolled added. 
+- Option to pause the game while the pool is being rolled added.
 
-#### 0051 - minor bug fix
-
-- removed the ability of players to trigger adddie event
-
-#### 0.0.50
-
-- Protection against overfilling the pool has been added.
 
 
 ### Licence
