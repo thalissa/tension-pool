@@ -94,6 +94,10 @@ Hook Calls and API are available [here](api.md)
 ## Change log
 
 [Change log](Changelog.md)
+#### 0.5.5
+- Swapped the CanvasLayer to NotesLayer in order to fix an issue with not being able to press ESC while Tension Controls were active
+- Additionally fixed players seeing repeated dicerolls and being able to see tension timer messages
+
 #### 0.5.4
 
 - Fixed an issue with errors appearing in console when swapping to a map with journal map pins, solved by switching the TensionLayer to the CanvasLayer and making minor edits
@@ -104,12 +108,6 @@ Hook Calls and API are available [here](api.md)
 - This is a [personal fork](https://github.com/thalissa/tension-pool) so that I can modify Tension Pool as I like without interfering with the main branch; if the developer wants to pull anything from my fork into the main branch, I don't mind
 - Original repository is located [here](https://github.com/SDoehren/tension-pool)
 - Update to use semantic versioning
-
-#### 0053
-
-- Scene Control Buttons individually removable
-- Add die and roll pool button added
-- Option to Whisper result to DM added
 
 
 

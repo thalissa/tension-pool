@@ -559,35 +559,47 @@ async function processtimeupdate(){
         let nextdrop = game.settings.get("tension-pool", "lastautodiceadd") + game.settings.get("tension-pool", "secsautodiceadd")
         let timetonextdrop = nextdrop - SimpleCalendar.api.timestamp()
         let realtimetonextdrop = Math.ceil(timetonextdrop / gameTimeRatio)
+        
         if (timetonextdrop <= 0) {
-            game.settings.set("tension-pool", "lastautodiceadd", SimpleCalendar.api.timestamp())
-            let rollsdue = Math.ceil(-timetonextdrop/game.settings.get("tension-pool", "secsautodiceadd"))+1;
-            let spacesinpool = game.settings.get("tension-pool", "maxdiceinpool")-game.settings.get("tension-pool", "diceinpool");
+            if (game.user.isGM){
+                //Set this or else players will keep getting warnings they can't update the setting and the next die drop message will repeat for every user.
+                
+                game.settings.set("tension-pool", "lastautodiceadd", SimpleCalendar.api.timestamp())
+              
+              
+              let rollsdue = Math.ceil(-timetonextdrop/game.settings.get("tension-pool", "secsautodiceadd"))+1;
+              let spacesinpool = game.settings.get("tension-pool", "maxdiceinpool")-game.settings.get("tension-pool", "diceinpool");
+              
+              if (rollsdue>spacesinpool){
+                  rollsdue=spacesinpool
+              }
 
-            if (rollsdue>spacesinpool){
-                rollsdue=spacesinpool
+              if (rollsdue>0) {
+                  await adddie("- Auto Added", rollsdue)
+              }
+
+              
+              let realworldgap = Math.ceil(game.settings.get("tension-pool", "secsautodiceadd") / gameTimeRatio)
+              
+              let message = "The next die drop will take " + realworldgap + " seconds in the real world."
+              ChatMessage.create({
+                  whisper: ChatMessage.getWhisperRecipients("GM"),
+                  content: message,
+                  speaker: ChatMessage.getSpeaker({alias: "Tension Timer"})
+              }, {});
             }
 
-            if (rollsdue>0) {
-                await adddie("- Auto Added", rollsdue)
-            }
-
-
-            let realworldgap = Math.ceil(game.settings.get("tension-pool", "secsautodiceadd") / gameTimeRatio)
-
-            let message = "The next die drop will take " + realworldgap + " seconds in the real world."
-            ChatMessage.create({
-                whisper: ChatMessage.getWhisperRecipients("GM"),
-                content: message,
-                speaker: ChatMessage.getSpeaker({alias: "Tension Timer"})
-            }, {});
-
-        } else if (realtimetonextdrop === 10)
+        } else if (realtimetonextdrop === 10){
+          if (game.user.isGM){
+            //Set this or else the next die drop will repeat for every user.
+            
             ChatMessage.create({
                 whisper: ChatMessage.getWhisperRecipients("GM"),
                 content: "Next die drop in " + realtimetonextdrop + " real world seconds.",
                 speaker: ChatMessage.getSpeaker({alias: "Tension Timer"})
             }, {});
+          }
+        }
     }
 }
 

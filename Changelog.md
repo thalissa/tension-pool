@@ -1,4 +1,7 @@
 # Change Log
+#### 0.5.5
+- Swapped the CanvasLayer to NotesLayer in order to fix an issue with not being able to press ESC while Tension Controls were active
+- Additionally fixed players seeing repeated dicerolls and being able to see tension timer messages
 
 #### 0.5.4
 
