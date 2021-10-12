@@ -1,15 +1,9 @@
-export class TensionLayer extends PlaceablesLayer {
-  constructor() {
-    super();
-  }
-
-  static get layerOptions() {
-    return foundry.utils.mergeObject(super.layerOptions, {
-      name: "TensionLayer",
-      canDragCreate: false,
-      zIndex: 180
-    });
-  }
-
-  static documentName = "Note";
+export class TensionLayer extends CanvasLayer {
+    static get layerOptions() {
+        return foundry.utils.mergeObject(super.layerOptions, {
+            canDragCreate: false,
+            zIndex: 180,
+            name: "tensionlayer"
+        });
+    }
 }

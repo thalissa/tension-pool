@@ -94,6 +94,10 @@ Hook Calls and API are available [here](api.md)
 ## Change log
 
 [Change log](Changelog.md)
+#### 0.5.4
+
+- Fixed an issue with errors appearing in console when swapping to a map with journal map pins, solved by switching the TensionLayer to the CanvasLayer and making minor edits
+
 #### 0.5.3
 
 - Forked by Thalissa
@@ -106,11 +110,6 @@ Hook Calls and API are available [here](api.md)
 - Scene Control Buttons individually removable
 - Add die and roll pool button added
 - Option to Whisper result to DM added
-
-#### 0052 - Tension Timer
-
-- Tension Timer added (requires [Simple Calendar by vigoren](https://github.com/vigoren/foundryvtt-simple-calendar#installing-the-module))
-- Option to pause the game while the pool is being rolled added.
 
 
 

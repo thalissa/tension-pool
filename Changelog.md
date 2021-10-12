@@ -1,5 +1,9 @@
 # Change Log
 
+#### 0.5.4
+
+- Fixed an issue with errors appearing in console when swapping to a map with journal map pins, solved by switching the TensionLayer to the CanvasLayer and making minor edits
+
 #### 0.5.3
 
 - Forked by Thalissa

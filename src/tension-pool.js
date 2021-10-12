@@ -8,7 +8,7 @@ import {displaypopup} from './popup.js';
 
 function registerLayer() {
     const layers = mergeObject(Canvas.layers, {
-        TensionLayer: TensionLayer
+        tensionlayer: TensionLayer
     });
     Object.defineProperty(Canvas, 'layers', {
         get: function () {
@@ -602,7 +602,7 @@ Hooks.on("getSceneControlButtons", (controls) => {
             name: "Tension Pool Controls",
             title: "Tension Pool Controls",
             icon: "fas fa-dice",
-            layer: "TensionLayer",
+            layer: "tensionlayer",
             visible: game.user.isGM,
             tools: [
                 {
@@ -748,4 +748,3 @@ export class Tension {
         await rollpool(dice,message,dicesize)
     }
 }
-
