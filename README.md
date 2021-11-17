@@ -94,6 +94,9 @@ Hook Calls and API are available [here](api.md)
 ## Change log
 
 [Change log](Changelog.md)
+#### 0.5.6
+- Finally fixed the ESC issue while tension controls were active by defining _controlled when creating the layer itself
+
 #### 0.5.5
 - Swapped the CanvasLayer to NotesLayer in order to fix an issue with not being able to press ESC while Tension Controls were active
 - Additionally fixed players seeing repeated dicerolls and being able to see tension timer messages
