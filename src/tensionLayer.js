@@ -1,9 +1,16 @@
-export class TensionLayer extends NotesLayer {
-  static get layerOptions() {
-    return foundry.utils.mergeObject(super.layerOptions, {
-      canDragCreate: false,
-      zIndex: 180,
-      name: "tensionlayer"
-    });
+export class TensionLayer extends CanvasLayer {
+  constructor() {
+      super();
+      
+      this.loader = new PIXI.Loader();
+
+      this.mouseInteractionManager = null;
+
+      this._interactiveChildren = false;
+      this._dragging = false;
+
+      this.options = this.constructor.layerOptions;
+      
+      this._controlled = {};
   }
 }
